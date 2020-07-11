@@ -14,6 +14,16 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use('Route')
+const Route = use('Route');
 
-Route.on('/').render('welcome')
+Route.on('/').render('welcome');
+
+Route.post('login', 'CustomerController.login');
+
+Route.group(() => {
+    Route.get('/', 'CustomerController.index');
+    Route.post('store', 'CustomerController.store');
+    Route.put('update', 'CustomerController.update');
+    Route.delete('destroy', 'CustomerController.destroy');
+  
+}).prefix('api/customers');
