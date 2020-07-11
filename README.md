@@ -12,3 +12,5 @@ adonis migration:run --seed
 Username = admin@example.com
 Password =  admin123
 
+adonis serve --dev
+
