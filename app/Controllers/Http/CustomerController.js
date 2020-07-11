@@ -1,5 +1,4 @@
 'use strict'
-const _ = require('lodash');
 const User = use('App/Models/User');
 const Customer = use('App/Models/Customer');
 
@@ -11,7 +10,7 @@ class CustomerController {
 	    return response.json(data);
     }
 
-    async store ({response,request,auth}) {
+    async store ({response,request}) {
 
 		const data = request.all();
 
